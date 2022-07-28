@@ -210,6 +210,7 @@ function getMobileOperatingSystem() {
 	}
 
 	if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+		document.body.style.minHeight = 'window.innerHeight' + 'px';
 		document
 			.querySelector("#getapp")
 			.addEventListener("click", function () {
@@ -277,12 +278,14 @@ const sbar = document.querySelector('#sidebar')
 const olay = document.querySelector('#overlay')
 btn.addEventListener('click', function(){
 sbar.style.left = '0'
+document.body.style.overflow = 'hidden';
 })
 
 $('#menu').click(function(){
-$('#overlay').fadeIn(300);
+	$('#overlay').fadeIn(300);
 })
 $('#overlay').click(function(){
+	document.body.style.overflow = 'inherit';
 	$('#sidebar').css('left', '-300px')
 	$('#overlay').fadeOut(300);
 })
