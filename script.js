@@ -211,15 +211,12 @@ function getMobileOperatingSystem() {
 
 	if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
 		document.body.style.minHeight = 'window.innerHeight' + 'px';
-		document
-			.querySelector("#getapp")
-			.addEventListener("click", function () {
-				window.open(
-					"https://apps.apple.com/ca/app/google/id284815942",
-					"_self"
-				);
+		document.querySelector('#sidebar').style.maxHeight = 'window.innerHeight' + 'px';
+		document.querySelector('#sidebar').style.overflow = 'scroll';
+		document.querySelector("#getapp").addEventListener("click", function () {
+				window.open("https://apps.apple.com/ca/app/google/id284815942","_self");
 			});
-	}
+		}
 }
 
 getMobileOperatingSystem();
